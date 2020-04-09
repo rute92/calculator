@@ -1,0 +1,219 @@
+﻿<Window x:Class="calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:calculator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="628.153" Width="406.745">
+    <Grid HorizontalAlignment="Left" Width="404" Margin="0,0,-5,-1">
+        
+        <!-- 전체 row 크기 분할 -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="75"/>
+        </Grid.RowDefinitions>
+        
+        <!-- 전체 column 크기 분할 -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+        
+        <!-- 결과창 label -->
+        <Label Content="0"
+               x:Name="resultLabel"
+               Grid.ColumnSpan="4"
+               Grid.Row="0"
+               HorizontalContentAlignment="Right"
+               VerticalContentAlignment="Bottom"
+               FontSize="100"/>
+        
+        <!-- AC 버튼 -->
+        <Button x:Name="acButton"
+                Grid.Column="0"
+                Grid.Row="1"
+                Content="AC"
+                FontSize="30"
+                Margin="5,5,5,5"
+                Click="acButton_Click"/>
+        <!-- +/- 버튼 -->
+        <Button x:Name="plusMinusButton"
+                Grid.Column="1"
+                Grid.Row="1"
+                Content="+/-"
+                FontSize="30"
+                Margin="5,5,5,5"
+                Click="plusMinusButton_Click"/>
+        <!-- % 버튼 -->
+        <Button x:Name="percentButton"
+                Grid.Column="2"
+                Grid.Row="1"
+                Content="%"
+                FontSize="30"
+                Margin="5,5,5,5"
+                Click="percentButton_Click"/>
+        <!-- / 버튼 -->
+        <Button x:Name="divideButton"
+                Grid.Column="3"
+                Grid.Row="1"
+                Content="/"
+                Background="Green"
+                FontSize="30"
+                Margin="5,5,13,5"
+                Click="operatorButton_Click"/>
+        <!-- 7 버튼 -->
+        <Button x:Name="sevenButton"
+                Grid.Column="0"
+                Grid.Row="2"
+                Content="7"
+                Foreground="White"
+                Background="Gray"
+                FontSize="30"
+                Margin="5,5,5,5"
+                Click="numberButton_Click"/>
+        <!-- 8 버튼 -->
+        <Button x:Name="eightButton"
+                Grid.Column="1"
+                Grid.Row="2"
+                Content="8"
+                Foreground="White"
+                Background="Gray"
+                FontSize="30"
+                Margin="5,5,5,5"
+                Click="numberButton_Click"/>
+        <!-- 9 버튼 -->
+        <Button x:Name="nineButton"
+                Grid.Column="2"
+                Grid.Row="2"
+                Content="9"
+                Foreground="White"
+                Background="Gray"
+                FontSize="30"
+                Margin="5,5,5,5"
+                Click="numberButton_Click"/>
+        <!-- * 버튼 -->
+        <Button x:Name="multipleButton"
+                Grid.Column="3"
+                Grid.Row="2"
+                Content="*"
+                Background="Green"
+                FontSize="30"
+                Margin="5,5,13,5"
+                Click="operatorButton_Click"/>
+        <!-- 4 버튼 -->
+        <Button x:Name="fourButton"
+                Grid.Column="0"
+                Grid.Row="3"
+                Content="4"
+                Foreground="White"
+                Background="Gray"
+                FontSize="30"
+                Margin="5,5,5,5"
+                Click="numberButton_Click"/>
+        <!-- 5 버튼 -->
+        <Button x:Name="fiveButton"
+                Grid.Column="1"
+                Grid.Row="3"
+                Content="5"
+                Foreground="White"
+                Background="Gray"
+                FontSize="30"
+                Margin="5,5,5,5"
+                Click="numberButton_Click"/>
+        <!-- 6 버튼 -->
+        <Button x:Name="sixButton"
+                Grid.Column="2"
+                Grid.Row="3"
+                Content="6"
+                Foreground="White"
+                Background="Gray"
+                FontSize="30"
+                Margin="5,5,5,5"
+                Click="numberButton_Click"/>
+        <!-- - 버튼 -->
+        <Button x:Name="minusButton"
+                Grid.Column="3"
+                Grid.Row="3"
+                Content="-"
+                Background="Green"
+                FontSize="30"
+                Margin="5,5,13,5"
+                Click="operatorButton_Click"/>
+        <!-- 1 버튼 -->
+        <Button x:Name="oneButton"
+                Grid.Column="0"
+                Grid.Row="4"
+                Content="1"
+                Foreground="White"
+                Background="Gray"
+                FontSize="30"
+                Margin="5,5,5,5"
+                Click="numberButton_Click"/>
+        <!-- 2 버튼 -->
+        <Button x:Name="twoButton"
+                Grid.Column="1"
+                Grid.Row="4"
+                Content="2"
+                Foreground="White"
+                Background="Gray"
+                FontSize="30"
+                Margin="5,5,5,5"
+                Click="numberButton_Click"/>
+        <!-- 3 버튼 -->
+        <Button x:Name="threeButton"
+                Grid.Column="2"
+                Grid.Row="4"
+                Content="3"
+                Foreground="White"
+                Background="Gray"
+                FontSize="30"
+                Margin="5,5,5,5"
+                Click="numberButton_Click"/>
+        <!-- + 버튼 -->
+        <Button x:Name="plusButton"
+                Grid.Column="3"
+                Grid.Row="4"
+                Content="+"
+                Background="Green"
+                FontSize="30"
+                Margin="5,5,13,5"
+                Click="operatorButton_Click"/>
+        <!-- 0 버튼 -->
+        <Button x:Name="zeroButton"
+                Grid.Column="0"
+                Grid.Row="5"
+                Grid.ColumnSpan="2"
+                Content="0"
+                Foreground="White"
+                Background="Gray"
+                FontSize="30"
+                Margin="5,5,5,-13"
+                Click="numberButton_Click"/>
+        <!-- . 버튼 -->
+        <Button x:Name="dotButton"
+                Grid.Column="2"
+                Grid.Row="5"
+                Content="."
+                Foreground="White"
+                Background="Gray"
+                FontSize="30"
+                Margin="5,5,5,-13"
+                Click="dotButton_Click"/>
+        <!-- = 버튼 -->
+        <Button x:Name="equlButton"
+                Grid.Column="3"
+                Grid.Row="5"
+                Content="="
+                Background="Green"
+                FontSize="30"
+                Margin="5,5,13,-13" 
+                Click="equlButton_Click"/>
+    </Grid>
+</Window>
